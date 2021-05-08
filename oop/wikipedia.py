@@ -7,7 +7,7 @@ class Wikipedia:
     def scrap(self):
         con = requests.get(self.url)
         soup = BeautifulSoup(con.content, 'lxml')
-        # print(soup)
+        #print(soup)
         infoTable = soup.find("table", {"class": "wikitable sortable"})
         infoPrint = []
         for i in infoTable.find_all('tr'):
